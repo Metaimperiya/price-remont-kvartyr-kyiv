@@ -3,417 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>СМЕТА 51 м² | ремонт двокімнатної квартири Київ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <title>Договір + Кошторис · ремонт 2-кімнатної 51 м² · Київ</title>
+    <meta name="description" content="Детальний договір підряду та кошторис на ремонт двокімнатної квартири 51 м² (панельний будинок, Київ). Роботи, матеріали, площі, кількість. Поетапна оплата.">
+    <meta name="keywords" content="договір на ремонт, кошторис з кількістю, ремонт квартири Київ, 2-кімнатна 51м2, панельний будинок">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background: #e2e8f0;
-            font-family: 'Inter', sans-serif;
-            padding: 24px 16px;
-            color: #0f172a;
-        }
-        .wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 32px;
-            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.2);
-            overflow: hidden;
-        }
-        /* хедер */
-        .top-bar {
-            background: #0c2e42;
-            padding: 24px 28px;
-            color: white;
-        }
-        .top-bar h1 {
-            font-size: 1.9rem;
-            font-weight: 800;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .badge-group {
-            display: flex;
-            gap: 14px;
-            margin-top: 16px;
-            flex-wrap: wrap;
-        }
-        .badge {
-            background: #1e5a7d;
-            padding: 6px 18px;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-        /* блок картинки — нормальний розмір без розтягування */
-        .plan-block {
-            padding: 28px 28px 12px 28px;
-            background: #f8fafc;
-            border-bottom: 1px solid #e2edf2;
-        }
-        .img-container {
-            background: #ffffff;
-            border-radius: 28px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            padding: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .plan-img {
-            max-width: 100%;
-            height: auto;
-            max-height: 550px;
-            width: auto;
-            display: block;
-            margin: 0 auto;
-            border-radius: 20px;
-            object-fit: contain;
-        }
-        .img-caption {
-            text-align: center;
-            margin-top: 12px;
-            font-size: 0.8rem;
-            color: #2c3e66;
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-        /* навігація меню */
-        .nav-steps {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            padding: 20px 28px 0 28px;
-            background: white;
-            border-bottom: 1px solid #e9eef3;
-        }
-        .step-btn {
-            background: #f1f5f9;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: 0.2s;
-            font-family: inherit;
-            color: #1f4662;
-        }
-        .step-btn i {
-            margin-right: 8px;
-        }
-        .step-btn.active {
-            background: #1f6392;
-            color: white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        /* блоки сметы */
-        .smeta-sections {
-            padding: 28px;
-        }
-        .smeta-card {
-            display: none;
-            animation: fade 0.2s ease;
-        }
-        .smeta-card.active-card {
-            display: block;
-        }
-        @keyframes fade {
-            from { opacity: 0; transform: translateY(6px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-        .cost-header {
-            font-size: 1.7rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            border-left: 6px solid #f39c12;
-            padding-left: 20px;
-        }
-        .cost-row {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 10px 0;
-            border-bottom: 1px dashed #cbd5e1;
-            font-size: 0.95rem;
-        }
-        .cost-row strong {
-            font-weight: 700;
-            color: #0c2e42;
-        }
-        .total-box {
-            background: #eef2ff;
-            margin-top: 24px;
-            padding: 18px 24px;
-            border-radius: 28px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            font-weight: 800;
-            font-size: 1.2rem;
-        }
-        .full-estimate-btn {
-            background: #0f3b53;
-            border: none;
-            color: white;
-            padding: 14px 24px;
-            border-radius: 60px;
-            font-weight: 700;
-            margin: 8px 28px 24px 28px;
-            width: calc(100% - 56px);
-            cursor: pointer;
-            font-size: 1rem;
-            transition: 0.2s;
-        }
-        .full-estimate-btn i {
-            margin-right: 10px;
-        }
-        .footer-note {
-            background: #f1f6fa;
-            padding: 20px 28px;
-            text-align: center;
-            font-size: 0.8rem;
-            border-top: 1px solid #cde0ec;
-        }
-        @media (max-width: 700px) {
-            .top-bar h1 { font-size: 1.3rem; }
-            .smeta-sections { padding: 20px; }
-            .cost-header { font-size: 1.3rem; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #e2e8f0; font-family: 'Inter', sans-serif; padding: 24px 16px; }
+        .wrapper { max-width: 1300px; margin: 0 auto; background: white; border-radius: 32px; overflow: hidden; box-shadow: 0 25px 45px -12px rgba(0,0,0,0.2); }
+        .header { background: #0c2e42; padding: 24px 28px; color: white; }
+        .header h1 { font-size: 1.8rem; font-weight: 800; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+        .badges { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+        .badge { background: #1e5a7d; padding: 6px 18px; border-radius: 40px; font-size: 0.8rem; }
+        .plan-block { padding: 24px; background: #f8fafc; border-bottom: 1px solid #e2edf2; }
+        .img-container { background: white; border-radius: 28px; padding: 16px; text-align: center; }
+        .plan-img { max-width: 100%; height: auto; border-radius: 20px; }
+        .img-caption { display: flex; justify-content: center; gap: 24px; margin-top: 12px; font-size: 0.7rem; flex-wrap: wrap; }
+        .tabs { display: flex; flex-wrap: wrap; gap: 8px; padding: 20px 28px 0 28px; background: white; border-bottom: 1px solid #e9eef3; }
+        .tab-btn { background: #f1f5f9; border: none; padding: 8px 18px; border-radius: 40px; font-weight: 600; cursor: pointer; font-size: 0.85rem; }
+        .tab-btn.active { background: #1f6392; color: white; }
+        .content { padding: 28px; }
+        .panel { display: none; }
+        .panel.active { display: block; }
+        .section-title { font-size: 1.5rem; font-weight: 800; border-left: 5px solid #f39c12; padding-left: 18px; margin-bottom: 20px; margin-top: 24px; }
+        .section-title:first-of-type { margin-top: 0; }
+        .row { display: flex; justify-content: space-between; flex-wrap: wrap; padding: 8px 0; border-bottom: 1px dashed #cbd5e1; }
+        .total { background: #eef2ff; margin-top: 20px; padding: 14px 20px; border-radius: 24px; display: flex; justify-content: space-between; font-weight: 800; }
+        .full-btn { background: #0f3b53; width: calc(100% - 56px); margin: 0 28px 28px 28px; border: none; padding: 14px; border-radius: 60px; color: white; font-weight: 700; cursor: pointer; font-size: 1rem; }
+        .summary { background: #fff5e6; border-radius: 24px; margin: 0 28px 28px 28px; padding: 20px; }
+        .footer { background: #f1f6fa; padding: 16px; text-align: center; font-size: 0.7rem; border-top: 1px solid #cde0ec; }
+        @media (max-width: 650px) { .content { padding: 20px; } .full-btn { width: calc(100% - 32px); margin: 0 16px 20px 16px; } .summary { margin: 0 16px 20px 16px; } }
     </style>
 </head>
 <body>
 <div class="wrapper">
-    <div class="top-bar">
-        <h1>
-            <span><i class="fas fa-calculator"></i> СМЕТА 51 М² · ДВОКІМНАТНА</span>
-            <span style="font-size: 0.9rem;"><i class="fas fa-building"></i> панельний будинок · Київ</span>
-        </h1>
-        <div class="badge-group">
-            <div class="badge"><i class="fas fa-ruler-combined"></i> загальна площа 51,0 м²</div>
-            <div class="badge"><i class="fas fa-door-open"></i> гостина 17,5 | спальня 14,6</div>
-            <div class="badge"><i class="fas fa-wrench"></i> повний кошторис під ключ</div>
-        </div>
+    <div class="header">
+        <h1><span><i class="fas fa-file-signature"></i> Договір підряду + Кошторис</span><span>51 м² · 2-кімнатна · Київ</span></h1>
+        <div class="badges"><span>📅 старт: липень 2025</span><span>📐 висота стель 2,56 м</span><span>💰 поетапна оплата</span><span>🧰 інструменти підрядника</span></div>
     </div>
 
-    <!-- КАРТИНКА – нормальний розмір, не розтягнута -->
     <div class="plan-block">
         <div class="img-container">
-            <img class="plan-img" src="https://i.ibb.co/fdShzJMG/plan-2k-kvartira-kiev-51m2.png" 
-                 alt="План двокімнатної квартири 51м2 Київ панельний будинок"
-                 title="План квартири 51 м² з розмірами">
+            <img class="plan-img" src="https://i.postimg.cc/5thwhxwW/plan-2k-kvartira-kiev-51m2.png" alt="План квартири 51 м²">
         </div>
-        <div class="img-caption">
-            <span><i class="fas fa-arrows-alt"></i> Розміри: 3450 / 5150 / 8600 мм</span>
-            <span><i class="fas fa-couch"></i> Гостина 17,5 м² · Спальня 14,6 м²</span>
-            <span><i class="fas fa-vest"></i> 2 гардеробні (2,6 м² + 2,6 м²)</span>
+        <div class="img-caption"><span>📏 3 450 / 5 150 / 8 600 мм</span><span>🍳 кухня 7,8 м²</span><span>🛋️ гостина 17,5 м²</span><span>🛏️ спальня 14,6 м²</span></div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="dogovir">📄 Договір</button>
+        <button class="tab-btn" data-tab="koshtorys">💰 Кошторис (детально)</button>
+        <button class="tab-btn" data-tab="umovy">⚙️ Умови + об'єми</button>
+    </div>
+
+    <div class="content">
+        <!-- ДОГОВІР -->
+        <div id="dogovir" class="panel active">
+            <div class="section-title"><i class="fas fa-gavel"></i> Договір підряду на ремонт квартири</div>
+            <div class="row"><strong>Предмет договору:</strong><span>Виконання ремонтних робіт у 2-кімнатній квартирі 51 м² (панельний будинок, Київ)</span></div>
+            <div class="row"><strong>Термін виконання:</strong><span>початок – липень 2025, тривалість узгоджується (орієнтовно 60-75 днів)</span></div>
+            <div class="row"><strong>Оплата:</strong><span>поетапно, за фактично виконані та прийняті роботи (акт приймання)</span></div>
+            <div class="row"><strong>Обов'язки підрядника:</strong><span>наявність інструменту, портфоліо, дотримання технологій, прибирання після себе</span></div>
+            <div class="row"><strong>Гарантія:</strong><span>12 місяців на всі види робіт (крім механічних пошкоджень)</span></div>
+            <div class="row"><strong>Додатково:</strong><span>демонтаж + вивіз сміття, заміна проводки, підготовка стін під 90°, монтаж дверей (6 шт), збір меблів</span></div>
+            <div class="total"><span>Підписання договору:</span><span>до початку робіт</span></div>
+
+            <div class="section-title"><i class="fas fa-list-check"></i> Етапи робіт (поетапна здача)</div>
+            <div class="row"><span>1. Демонтаж + вивіз сміття</span><span>≈ 41 000 грн</span></div>
+            <div class="row"><span>2. Чорнові роботи (стяжка, штукатурка, гідроізоляція)</span><span>≈ 197 000 грн</span></div>
+            <div class="row"><span>3. Інженерні мережі (електрика, водопровід, каналізація, інтернет)</span><span>≈ 48 000 грн</span></div>
+            <div class="row"><span>4. Чистове оздоблення (плитка, ламінат, фарбування, плінтус)</span><span>≈ 213 000 грн</span></div>
+            <div class="row"><span>5. Сантехніка, опалення, двері (6 шт)</span><span>≈ 132 500 грн</span></div>
+            <div class="row"><span>6. Непередбачені + логістика + клінінг</span><span>≈ 56 000 грн</span></div>
+            <div class="total"><span>ЗАГАЛЬНА ВАРТІСТЬ (під ключ):</span><span>687 500 грн</span></div>
+            <div class="row" style="margin-top:12px;"><span><i class="fas fa-check-circle"></i> Оплата кожного етапу – після підписання акта виконаних робіт.</span><span></span></div>
+        </div>
+
+        <!-- КОШТОРИС (ПОВНИЙ, З КІЛЬКІСТЮ) -->
+        <div id="koshtorys" class="panel">
+            <div class="section-title"><i class="fas fa-calculator"></i> Детальний кошторис з об'ємами</div>
+            <div class="row"><strong><i class="fas fa-hammer"></i> Демонтаж</strong></div>
+            <div class="row"><span>Зняття дверей (6 шт)</span><span>1500 грн</span></div>
+            <div class="row"><span>Розбирання перегородок (до 6 м²)</span><span>4500 грн</span></div>
+            <div class="row"><span>Довбання стяжки (45 м² × 5 см)</span><span>9000 грн</span></div>
+            <div class="row"><span>Збивання плитки (45 м²)</span><span>5000 грн</span></div>
+            <div class="row"><span>Зняття штукатурки (120 м²)</span><span>7000 грн</span></div>
+            <div class="row"><span>Вивіз сміття + старі меблі</span><span>12000 грн</span></div>
+            <div class="row"><span>Матеріали (мішки, плівка)</span><span>2000 грн</span></div>
+            <div class="total"><span>РАЗОМ ДЕМОНТАЖ:</span><span>41 000 грн</span></div>
+
+            <div class="row" style="margin-top:16px;"><strong><i class="fas fa-brush"></i> Чорнові роботи</strong></div>
+            <div class="row"><span>Грунтовка (200 м²)</span><span>3000 грн</span></div>
+            <div class="row"><span>Гідроізоляція підлоги (19 м²)</span><span>6000 грн</span></div>
+            <div class="row"><span>Штукатурка стін по маяках + вирівнювання під 90° (120 м²)</span><span>42000 грн</span></div>
+            <div class="row"><span>Стяжка підлоги напівсуха (45 м²)</span><span>32000 грн</span></div>
+            <div class="row"><span>Монтаж ГКЛ коробів (стояки, вентканали)</span><span>14000 грн</span></div>
+            <div class="row"><span>Шпаклівка стін і стелі (200 м²)</span><span>32000 грн</span></div>
+            <div class="row"><span>Матеріали: грунтовка 20л, гідроізоляція, штукатурка 60 мішків, стяжка, ГКЛ 12 арк., профіль, шпаклівка 12 відер</span><span>53000 грн</span></div>
+            <div class="total"><span>РАЗОМ ЧОРНОВІ:</span><span>197 000 грн</span></div>
+
+            <div class="row" style="margin-top:16px;"><strong><i class="fas fa-microchip"></i> Інженерні мережі</strong></div>
+            <div class="row"><span>Електрощит + автомати, УЗО, реле</span><span>12000 грн</span></div>
+            <div class="row"><span>Кабель ВВГ 3х2.5 (200 м) + 3х1.5 (150 м) + UTP (50 м)</span><span>11000 грн</span></div>
+            <div class="row"><span>Штроблення (120 м.п.), труби водопостачання PEX (50 м), каналізація ПП</span><span>15000 грн</span></div>
+            <div class="row"><span>Фільтри, лічильники, вентиляція</span><span>10000 грн</span></div>
+            <div class="total"><span>РАЗОМ ІНЖЕНЕРІЯ:</span><span>48 000 грн</span></div>
+
+            <div class="row" style="margin-top:16px;"><strong><i class="fas fa-paint-roller"></i> Чистове оздоблення</strong></div>
+            <div class="row"><span>Плитка: підлога (19 м²) + стіни туалет/ванна/кухня (26 м²) = 45 м² (робота)</span><span>42000 грн</span></div>
+            <div class="row"><span>Ламінат 32 м² (робота)</span><span>12000 грн</span></div>
+            <div class="row"><span>Фарбування стін (рельєф «під бетон», 155 м²)</span><span>18000 грн</span></div>
+            <div class="row"><span>Плінтус 56 м.п. (монтаж)</span><span>6000 грн</span></div>
+            <div class="row"><span>Розетки/вимикачі 50 шт (встановлення)</span><span>10000 грн</span></div>
+            <div class="row"><span>Світильники 30 шт (монтаж)</span><span>8000 грн</span></div>
+            <div class="row"><span>Матеріали: плитка (45 м²) + клей/затирка</span><span>53000 грн</span></div>
+            <div class="row"><span>Ламінат 33 клас + підкладка (32 м²)</span><span>21000 грн</span></div>
+            <div class="row"><span>Фарба, плінтуси, розетки/вимикачі, світильники</span><span>43000 грн</span></div>
+            <div class="total"><span>РАЗОМ ЧИСТОВЕ:</span><span>213 000 грн</span></div>
+
+            <div class="row" style="margin-top:16px;"><strong><i class="fas fa-faucet"></i> Сантехніка, двері, опалення</strong></div>
+            <div class="row"><span>Заміна стояків ХВП/ГВП/каналізації, радіатори 5 шт, труби опалення, колектор</span><span>49000 грн</span></div>
+            <div class="row"><span>Ванна акрилова, унітаз, раковина, змішувачі (ванна+кухня), рушникосушки, сифони</span><span>35500 грн</span></div>
+            <div class="row"><span>Двері: вхідні (метал) + 3 міжкімнатні + 2 розсувні для гардеробних = 6 дверей</span><span>48000 грн</span></div>
+            <div class="total"><span>РАЗОМ САНТЕХНІКА+ДВЕРІ:</span><span>132 500 грн</span></div>
+
+            <div class="row" style="margin-top:16px;"><strong><i class="fas fa-truck"></i> Непередбачені, логістика, інше</strong></div>
+            <div class="row"><span>Непередбачені (криві стіни, запас плитки, заміна труб, підйом)</span><span>38000 грн</span></div>
+            <div class="row"><span>Інше: вивіз сміття після етапів, фінішний клінінг, герметики, піна</span><span>18000 грн</span></div>
+            <div class="total"><span>РАЗОМ НЕПЕРЕДБАЧЕНІ+ІНШЕ:</span><span>56 000 грн</span></div>
+
+            <div class="total" style="background:#ffedd5; margin-top:24px;"><span><strong>ПІДСУМОК (матеріали + робота):</strong></span><span><strong>687 500 грн</strong></span></div>
+        </div>
+
+        <!-- УМОВИ + ОБ'ЄМИ ПО ЗОНАХ -->
+        <div id="umovy" class="panel">
+            <div class="section-title"><i class="fas fa-clipboard-list"></i> Детальний обсяг робіт по зонах</div>
+            <div class="row"><strong>📌 Кухня (7,8 м²)</strong></div>
+            <div class="row"><span>Стіни: демонтаж старої плитки (фартух) з можливістю повтору, фарбування 3 стін «під бетон»</span><span>≈ 27 м²</span></div>
+            <div class="row"><span>Підлога: ламінат</span><span>7,8 м²</span></div>
+            <div class="row"><span>Сантехніка/газ: заміна раковини, сифона, підключення газової плити (за участю газової служби), монтаж витяжки</span><span>комплекс</span></div>
+            <div class="row"><span>Меблі: збір модульної кухні + обіднього столу</span><span>опціонально</span></div>
+
+            <div class="row" style="margin-top:12px;"><strong>📌 Туалет (1,2 м²)</strong></div>
+            <div class="row"><span>Сантехніка: заміна труб, монтаж бойлера</span><span>комплекс</span></div>
+            <div class="row"><span>Оздоблення: підлога плитка (1,2 м²), стіни фарбування вологостійке «під бетон»</span><span>≈ 9 м²</span></div>
+
+            <div class="row" style="margin-top:12px;"><strong>📌 Ванна (3,3 м²)</strong></div>
+            <div class="row"><span>Сантехніка: заміна труб, умивальника, підключення пральної машини</span><span>комплекс</span></div>
+            <div class="row"><span>Плитка: підлога частково (1,8 м²) + стіни навколо ванни (висота 1,6 м)</span><span>≈ 8 м²</span></div>
+            <div class="row"><span>Тепла підлога електрична (на відкритій зоні 1,8 м²) + вологозахищена розетка</span><span>1 шт</span></div>
+            <div class="row"><span>Ванна: зашивка з люком (доступ до комунікацій)</span><span>комплекс</span></div>
+
+            <div class="row" style="margin-top:12px;"><strong>📌 Коридор + житлові кімнати (гостина 17,5 + спальня 14,6 + передпокій 6,0)</strong></div>
+            <div class="row"><span>Стіни: фарбування «під бетон» / миюча фарба в коридорі</span><span>≈ 110 м²</span></div>
+            <div class="row"><span>Підлога: ламінат (гостина+спальня+передпокій = 38,1 м²)</span><span>38,1 м²</span></div>
+            <div class="row"><span>Електрика: додаткові розетки (узгоджено), прокладка інтернет-кабелю</span><span>комплекс</span></div>
+
+            <div class="section-title"><i class="fas fa-tasks"></i> Загальні об'єми по квартирі</div>
+            <div class="row"><span>Штукатурка стін (вирівнювання під 90°)</span><span>120 м²</span></div>
+            <div class="row"><span>Стяжка підлоги</span><span>45 м²</span></div>
+            <div class="row"><span>Плитка (підлога + стіни)</span><span>45 м²</span></div>
+            <div class="row"><span>Ламінат</span><span>32 м² (без санвузлів/кухні)</span></div>
+            <div class="row"><span>Плінтус</span><span>56 м.п.</span></div>
+            <div class="row"><span>Розетки + вимикачі</span><span>50 шт</span></div>
+            <div class="row"><span>Світильники (точкові LED)</span><span>30 шт</span></div>
+            <div class="row"><span>Двері (вхідні, міжкімнатні, розсувні)</span><span>6 шт</span></div>
+            <div class="total"><span>⚠️ Всі роботи виконуються згідно з договором, поетапна оплата після підписання акта.</span><span></span></div>
         </div>
     </div>
 
-    <!-- МЕНЮШКИ ПО ЕТАПАХ (кнопки) -->
-    <div class="nav-steps">
-        <button class="step-btn active" data-step="demont"><i class="fas fa-hammer"></i> Демонтаж</button>
-        <button class="step-btn" data-step="chorn"><i class="fas fa-brush"></i> Чорнові роботи</button>
-        <button class="step-btn" data-step="ing"><i class="fas fa-microchip"></i> Інженерія</button>
-        <button class="step-btn" data-step="chyst"><i class="fas fa-paint-roller"></i> Чистове</button>
-        <button class="step-btn" data-step="santeh"><i class="fas fa-faucet"></i> Сантехніка+опалення</button>
-        <button class="step-btn" data-step="dveri"><i class="fas fa-door-closed"></i> Двері</button>
-        <button class="step-btn" data-step="nepred"><i class="fas fa-exclamation-triangle"></i> Непередбачені</button>
-        <button class="step-btn" data-step="inshe"><i class="fas fa-truck"></i> Інше/логістика</button>
-    </div>
+    <button class="full-btn" id="showSummary"><i class="fas fa-chart-simple"></i> ПОКАЗАТИ ЗВЕДЕНУ СМЕТУ (загальна)</button>
 
-    <!-- ВСІ РОЗДІЛИ СМЕТИ (ПОВНІСТЮ ЯК ТИ ПРОСИВ) -->
-    <div class="smeta-sections">
-        <!-- 1 ДЕМОНТАЖ -->
-        <div id="demont" class="smeta-card active-card">
-            <div class="cost-header"><i class="fas fa-hammer"></i> Демонтаж</div>
-            <div class="cost-row"><span>Зняття старих дверей, коробок, лиштв</span><span>1500 грн</span></div>
-            <div class="cost-row"><span>Розбирання перегородок</span><span>4500 грн</span></div>
-            <div class="cost-row"><span>Довбання старої стяжки підлоги</span><span>9000 грн</span></div>
-            <div class="cost-row"><span>Збивання плитки з підлоги і стін</span><span>5000 грн</span></div>
-            <div class="cost-row"><span>Зняття старої штукатурки</span><span>7000 грн</span></div>
-            <div class="cost-row"><span>Вивіз сміття з вантажниками</span><span>12000 грн</span></div>
-            <div class="cost-row"><span>Матеріали: мішки, плівка, скотч</span><span>2000 грн</span></div>
-            <div class="total-box"><span><strong>РАЗОМ ДЕМОНТАЖ:</strong></span><span><strong>41 000 грн</strong></span></div>
-        </div>
-
-        <!-- 2 ЧОРНОВІ -->
-        <div id="chorn" class="smeta-card">
-            <div class="cost-header"><i class="fas fa-drafting-compass"></i> Чорнові роботи</div>
-            <div class="cost-row"><span>Грунтовка стін і стелі</span><span>3000 грн</span></div>
-            <div class="cost-row"><span>Гідроізоляція підлоги (санвузол, кухня, передпокій)</span><span>6000 грн</span></div>
-            <div class="cost-row"><span>Штукатурка стін по маяках</span><span>42000 грн</span></div>
-            <div class="cost-row"><span>Стяжка підлоги напівсуха</span><span>32000 грн</span></div>
-            <div class="cost-row"><span>Монтаж ГКЛ коробів</span><span>14000 грн</span></div>
-            <div class="cost-row"><span>Шпаклівка стін і стелі</span><span>32000 грн</span></div>
-            <div class="cost-row" style="background:#f8fafc; margin-top:8px;"><span><strong>Матеріали чорнові:</strong></span><span></span></div>
-            <div class="cost-row"><span>Грунтовка 20 л</span><span>2500 грн</span></div>
-            <div class="cost-row"><span>Гідроізоляція суміш</span><span>3500 грн</span></div>
-            <div class="cost-row"><span>Цементна штукатурка 60 мішків</span><span>15000 грн</span></div>
-            <div class="cost-row"><span>Напівсуха стяжка (пісок, цемент, фібра)</span><span>18000 грн</span></div>
-            <div class="cost-row"><span>ГКЛ вологостійкий 12 листів</span><span>6000 грн</span></div>
-            <div class="cost-row"><span>Профіль, підвіси, кріплення</span><span>4000 грн</span></div>
-            <div class="cost-row"><span>Шпаклівка стартова + фінішна 12 відер</span><span>8000 грн</span></div>
-            <div class="total-box"><span><strong>РАЗОМ ЧОРНОВІ:</strong></span><span><strong>197 000 грн</strong></span></div>
-        </div>
-
-        <!-- 3 ІНЖЕНЕРНІ МЕРЕЖІ -->
-        <div id="ing" class="smeta-card">
-            <div class="cost-header"><i class="fas fa-bolt"></i> Інженерні мережі</div>
-            <div class="cost-row"><span>Електрощит з автоматами, УЗО, реле напруги</span><span>12000 грн</span></div>
-            <div class="cost-row"><span>Кабель ВВГ 3х2.5 200 м</span><span>6000 грн</span></div>
-            <div class="cost-row"><span>Кабель ВВГ 3х1.5 150 м</span><span>4000 грн</span></div>
-            <div class="cost-row"><span>Кабель UTP 50 м</span><span>1000 грн</span></div>
-            <div class="cost-row"><span>Штроблення під кабель</span><span>8000 грн</span></div>
-            <div class="cost-row"><span>Труби водопостачання PEX 50 м</span><span>4000 грн</span></div>
-            <div class="cost-row"><span>Труби каналізації ПП 110/50</span><span>3000 грн</span></div>
-            <div class="cost-row"><span>Фільтри, лічильники, монтаж</span><span>5000 грн</span></div>
-            <div class="cost-row"><span>Вентиляційні короби та клапани</span><span>5000 грн</span></div>
-            <div class="total-box"><span><strong>РАЗОМ ІНЖЕНЕРІЯ:</strong></span><span><strong>48 000 грн</strong></span></div>
-        </div>
-
-        <!-- 4 ЧИСТОВЕ ОЗДОБЛЕННЯ -->
-        <div id="chyst" class="smeta-card">
-            <div class="cost-header"><i class="fas fa-paint-brush"></i> Чистове оздоблення</div>
-            <div class="cost-row"><span>Укладання плитки (санвузол, кухня, передпокій)</span><span>42000 грн</span></div>
-            <div class="cost-row"><span>Укладання ламінату (зал, спальня)</span><span>12000 грн</span></div>
-            <div class="cost-row"><span>Шпалери під фарбування</span><span>18000 грн</span></div>
-            <div class="cost-row"><span>Монтаж плінтусів</span><span>6000 грн</span></div>
-            <div class="cost-row"><span>Встановлення розеток, вимикачів</span><span>10000 грн</span></div>
-            <div class="cost-row"><span>Монтаж світильників</span><span>8000 грн</span></div>
-            <div class="cost-row" style="background:#f8fafc;"><span><strong>Матеріали чистові:</strong></span><span></span></div>
-            <div class="cost-row"><span>Плитка підлога 25 м2</span><span>20000 грн</span></div>
-            <div class="cost-row"><span>Плитка настінна 35 м2</span><span>25000 грн</span></div>
-            <div class="cost-row"><span>Клей, затирка, хрестики</span><span>8000 грн</span></div>
-            <div class="cost-row"><span>Ламінат 33 клас 35 м2</span><span>18000 грн</span></div>
-            <div class="cost-row"><span>Підкладка під ламінат</span><span>3000 грн</span></div>
-            <div class="cost-row"><span>Шпалери або фарба</span><span>12000 грн</span></div>
-            <div class="cost-row"><span>Плінтуси з фурнітурою</span><span>7000 грн</span></div>
-            <div class="cost-row"><span>Розетки, вимикачі 50 шт</span><span>15000 грн</span></div>
-            <div class="cost-row"><span>Світильники точкові 30 шт</span><span>9000 грн</span></div>
-            <div class="total-box"><span><strong>РАЗОМ ЧИСТОВЕ:</strong></span><span><strong>213 000 грн</strong></span></div>
-        </div>
-
-        <!-- 5 САНТЕХНІКА ТА ОПАЛЕННЯ -->
-        <div id="santeh" class="smeta-card">
-            <div class="cost-header"><i class="fas fa-shower"></i> Сантехніка та опалення</div>
-            <div class="cost-row"><span>Заміна стояків ХВП, ГВП, каналізації</span><span>15000 грн</span></div>
-            <div class="cost-row"><span>Радіатори біметал 5 шт</span><span>18000 грн</span></div>
-            <div class="cost-row"><span>Труби опалення PEX</span><span>10000 грн</span></div>
-            <div class="cost-row"><span>Колекторна шафа</span><span>6000 грн</span></div>
-            <div class="cost-row"><span>Ванна акрилова</span><span>8000 грн</span></div>
-            <div class="cost-row"><span>Унітаз</span><span>6000 грн</span></div>
-            <div class="cost-row"><span>Раковина з тумбою</span><span>7000 грн</span></div>
-            <div class="cost-row"><span>Змішувач ванна</span><span>3000 грн</span></div>
-            <div class="cost-row"><span>Змішувач кухня</span><span>2500 грн</span></div>
-            <div class="cost-row"><span>Рушникосушки, полички, аксесуари</span><span>5000 грн</span></div>
-            <div class="cost-row"><span>Сифони, шланги, арматура</span><span>4000 грн</span></div>
-            <div class="total-box"><span><strong>РАЗОМ САНТЕХНІКА:</strong></span><span><strong>84 500 грн</strong></span></div>
-        </div>
-
-        <!-- 6 ДВЕРІ -->
-        <div id="dveri" class="smeta-card">
-            <div class="cost-header"><i class="fas fa-door-open"></i> Двері</div>
-            <div class="cost-row"><span>Вхідні двері металеві</span><span>18000 грн</span></div>
-            <div class="cost-row"><span>Міжкімнатні двері 3 шт</span><span>18000 грн</span></div>
-            <div class="cost-row"><span>Розсувні двері гардеробних 2 шт</span><span>12000 грн</span></div>
-            <div class="total-box"><span><strong>РАЗОМ ДВЕРІ:</strong></span><span><strong>48 000 грн</strong></span></div>
-        </div>
-
-        <!-- 7 НЕПЕРЕДБАЧЕНІ -->
-        <div id="nepred" class="smeta-card">
-            <div class="cost-header"><i class="fas fa-chart-line"></i> Непередбачені витрати</div>
-            <div class="cost-row"><span>Добривка штукатурки на криві стіни</span><span>8000 грн</span></div>
-            <div class="cost-row"><span>Добривка стяжки на перепади підлоги</span><span>5000 грн</span></div>
-            <div class="cost-row"><span>Заміна іржавої труби каналізації</span><span>5000 грн</span></div>
-            <div class="cost-row"><span>Бій плитки, добривка</span><span>6000 грн</span></div>
-            <div class="cost-row"><span>Доставка матеріалів додаткова</span><span>5000 грн</span></div>
-            <div class="cost-row"><span>Підйом на поверх</span><span>5000 грн</span></div>
-            <div class="cost-row"><span>Одноразовий інструмент</span><span>4000 грн</span></div>
-            <div class="total-box"><span><strong>РАЗОМ НЕПЕРЕДБАЧЕНІ:</strong></span><span><strong>38 000 грн</strong></span></div>
-        </div>
-
-        <!-- 8 ІНШЕ -->
-        <div id="inshe" class="smeta-card">
-            <div class="cost-header"><i class="fas fa-clipboard-list"></i> Інше / логістика</div>
-            <div class="cost-row"><span>Вивіз сміття після етапів</span><span>8000 грн</span></div>
-            <div class="cost-row"><span>Фінішний клінінг</span><span>7000 грн</span></div>
-            <div class="cost-row"><span>Герметики, піна, силікон</span><span>3000 грн</span></div>
-            <div class="total-box"><span><strong>РАЗОМ ІНШЕ:</strong></span><span><strong>18 000 грн</strong></span></div>
+    <div id="summaryBlock" style="display: none;">
+        <div class="summary">
+            <div style="font-weight:800; font-size:1.2rem; margin-bottom:12px;">📊 ЗВЕДЕНИЙ КОШТОРИС (під ключ)</div>
+            <div class="row"><span>Демонтаж + вивіз</span><span>41 000 грн</span></div>
+            <div class="row"><span>Чорнові роботи (штукатурка 120м², стяжка 45м²)</span><span>197 000 грн</span></div>
+            <div class="row"><span>Інженерні мережі</span><span>48 000 грн</span></div>
+            <div class="row"><span>Чистове оздоблення (плитка 45м², ламінат 32м²)</span><span>213 000 грн</span></div>
+            <div class="row"><span>Сантехніка + двері (6 шт)</span><span>132 500 грн</span></div>
+            <div class="row"><span>Непередбачені + логістика + інше</span><span>56 000 грн</span></div>
+            <div class="total" style="background:#ffefcf; margin-top:12px;"><span><strong>ВСЬОГО ПО ДОГОВОРУ:</strong></span><span><strong>687 500 грн</strong></span></div>
+            <div class="row" style="margin-top:12px;"><span>✅ Оплата поетапно за фактом</span><span>✅ Гарантія 12 міс.</span></div>
         </div>
     </div>
 
-    <!-- КНОПКА РОЗГОРНУТИ ВСЮ СМЕТУ ВІДРАЗУ -->
-    <button class="full-estimate-btn" id="showFullEstimateBtn"><i class="fas fa-file-invoice-dollar"></i> Розгорнути всю смету (повністю)</button>
-
-    <!-- БЛОК ПІДСУМКІВ, ЯКИЙ З'ЯВЛЯЄТЬСЯ ПРИ НАТИСКАННІ -->
-    <div id="fullEstimateContainer" style="display: none; margin: 0 28px 28px 28px; background: #fefce8; border-radius: 28px; padding: 20px; border: 1px solid #ffe0a3;">
-        <div style="font-weight: 800; font-size: 1.3rem; margin-bottom: 14px;"><i class="fas fa-chart-simple"></i> ЗВЕДЕНА СМЕТА (ВСІ РОЗДІЛИ)</div>
-        <div class="cost-row"><span>Демонтаж</span><span>41 000 грн</span></div>
-        <div class="cost-row"><span>Чорнові роботи</span><span>197 000 грн</span></div>
-        <div class="cost-row"><span>Інженерні мережі</span><span>48 000 грн</span></div>
-        <div class="cost-row"><span>Чистове оздоблення</span><span>213 000 грн</span></div>
-        <div class="cost-row"><span>Сантехніка та опалення</span><span>84 500 грн</span></div>
-        <div class="cost-row"><span>Двері</span><span>48 000 грн</span></div>
-        <div class="cost-row"><span>Непередбачені витрати</span><span>38 000 грн</span></div>
-        <div class="cost-row"><span>Інше / логістика</span><span>18 000 грн</span></div>
-        <div class="total-box" style="background:#ffedd5;"><span><strong>ВСЬОГО ПО СМЕТІ:</strong></span><span><strong>687 500 грн</strong></span></div>
-        <div style="margin-top: 16px; background: white; border-radius: 20px; padding: 12px; font-size: 0.85rem;">
-            <i class="fas fa-chart-line"></i> Реальний діапазон із запасом: <strong>650 000 – 750 000 грн</strong> (панельний будинок, Київ)
-        </div>
-    </div>
-
-    <div class="footer-note">
-        <i class="fas fa-calculator"></i> Повна смета на 51 м² (двокімнатна) – всі роботи, матеріали, чорнові/чистові, сантехніка, двері, непередбачені. <br>Картинка плану відповідає оригінальному кресленню, без спотворень.
+    <div class="footer">
+        <i class="fas fa-file-contract"></i> Договір підряду + кошторис з кількістю матеріалів · 2-кімнатна квартира 51 м² · панельний будинок · Київ · старт липень 2025
     </div>
 </div>
 
 <script>
-    // перемикання між розділами (кнопки)
-    const btns = document.querySelectorAll('.step-btn');
-    const cards = document.querySelectorAll('.smeta-card');
-
-    function activateSection(sectionId) {
-        cards.forEach(card => card.classList.remove('active-card'));
-        const targetCard = document.getElementById(sectionId);
-        if(targetCard) targetCard.classList.add('active-card');
-        btns.forEach(btn => btn.classList.remove('active'));
-        const activeBtn = document.querySelector(`.step-btn[data-step="${sectionId}"]`);
-        if(activeBtn) activeBtn.classList.add('active');
-    }
+    const btns = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.panel');
+    const summaryBtn = document.getElementById('showSummary');
+    const summaryBlock = document.getElementById('summaryBlock');
 
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
-            const step = btn.getAttribute('data-step');
-            activateSection(step);
-            // сховати великий зведений блок якщо відкритий
-            const fullDiv = document.getElementById('fullEstimateContainer');
-            if(fullDiv) fullDiv.style.display = 'none';
+            const target = btn.getAttribute('data-tab');
+            panels.forEach(p => p.classList.remove('active'));
+            document.getElementById(target).classList.add('active');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if(summaryBlock) summaryBlock.style.display = 'none';
         });
     });
 
-    // кнопка "розгорнути всю смету"
-    const fullBtn = document.getElementById('showFullEstimateBtn');
-    const fullDiv = document.getElementById('fullEstimateContainer');
-    fullBtn.addEventListener('click', () => {
-        if(fullDiv.style.display === 'none' || fullDiv.style.display === '') {
-            fullDiv.style.display = 'block';
-            // прокрутити до нього
-            fullDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-            fullDiv.style.display = 'none';
-        }
-    });
+    if(summaryBtn && summaryBlock) {
+        summaryBtn.addEventListener('click', () => {
+            summaryBlock.style.display = summaryBlock.style.display === 'none' ? 'block' : 'none';
+            if(summaryBlock.style.display === 'block') summaryBlock.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    }
 </script>
 </body>
 </html>
