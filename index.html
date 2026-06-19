@@ -2,19 +2,16 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
-    <!-- ====== GOOGLE VERIFICATION ====== -->
     <meta name="google-site-verification" content="RS-c4zCmiwrQUy9uKeLJOVDVCvz3yt8pJPEGKbIgMnY" />
 
-    <!-- ====== SEO ====== -->
     <title>Ремонт квартир Київ · Кошторис 51 м² · Ціни 2025</title>
     <meta name="description" content="Повний кошторис на ремонт 2-кімнатної квартири 51 м² у Києві. Демонтаж, чорнові, інженерія, чистова, сантехніка, двері. Телефон: +380685742713.">
-    <meta name="keywords" content="ремонт квартир Київ, кошторис на ремонт, ремонт 2-кімнатної квартири, панельний будинок, ремонт під ключ, ціни на ремонт">
+    <meta name="keywords" content="ремонт квартир Київ, кошторис на ремонт, ремонт 2-кімнатної квартири, панельний будинок, ремонт під ключ">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://metaimperiya.github.io/remont-kvartyr-kyiv/">
 
-    <!-- ====== OPEN GRAPH ====== -->
     <meta property="og:image" content="https://raw.githubusercontent.com/Metaimperiya/remont-kvartyr-kyiv/main/price-remont-kvartyr-kyiv.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -24,7 +21,6 @@
     <meta property="og:url" content="https://metaimperiya.github.io/remont-kvartyr-kyiv/">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- ====== STRUCTURED DATA ====== -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -33,17 +29,13 @@
       "description": "Професійний ремонт квартир у Києві. Повний кошторис, матеріали, роботи під ключ.",
       "url": "https://metaimperiya.github.io/remont-kvartyr-kyiv/",
       "telephone": "+380685742713",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kyiv",
-        "addressCountry": "UA"
-      }
+      "address": { "@type": "PostalAddress", "addressLocality": "Kyiv", "addressCountry": "UA" }
     }
     </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -56,7 +48,7 @@
             align-items: flex-start;
         }
         .wrapper { 
-            max-width: 480px; 
+            max-width: 1200px; 
             width: 100%;
             margin: 0 auto; 
             background: #ffffff; 
@@ -64,32 +56,30 @@
             overflow: hidden; 
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
         }
-        
+
         /* ====== ХЕДЕР ====== */
         .header { 
             background: linear-gradient(135deg, #0a1628, #1a2a5a);
-            padding: 28px 24px 24px 24px; 
+            padding: 28px 32px; 
             color: white; 
         }
+        .header-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 16px;
+            align-items: start;
+        }
         .header h1 { 
-            font-size: 1.8rem; 
+            font-size: clamp(1.4rem, 4vw, 2.2rem); 
             font-weight: 900; 
             letter-spacing: -0.5px;
             line-height: 1.2;
         }
         .header h1 i { color: #f39c12; margin-right: 10px; }
         .header .subtitle {
-            font-size: 1rem;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
             opacity: 0.8;
             margin-top: 4px;
-            font-weight: 400;
-        }
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 12px;
         }
         .price-tag {
             background: #f39c12;
@@ -97,8 +87,7 @@
             padding: 8px 20px;
             border-radius: 40px;
             font-weight: 800;
-            font-size: 1.2rem;
-            display: inline-block;
+            font-size: clamp(1rem, 2vw, 1.4rem);
             white-space: nowrap;
         }
         .badges { 
@@ -111,22 +100,24 @@
             background: rgba(255,255,255,0.1); 
             padding: 6px 16px; 
             border-radius: 40px; 
-            font-size: 0.8rem; 
+            font-size: clamp(0.65rem, 1vw, 0.85rem); 
             border: 1px solid rgba(255,255,255,0.1);
         }
-        
+
         /* ====== ТЕЛЕФОН ====== */
         .phone-block {
             background: #f39c12;
             color: #000;
-            padding: 14px 20px;
-            margin: 0 20px 16px 20px;
+            padding: 14px 24px;
+            margin: 0 24px 16px 24px;
             border-radius: 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            flex-wrap: wrap;
+            gap: 8px;
         }
         .phone-block a {
             color: #000;
@@ -135,7 +126,6 @@
             align-items: center;
             gap: 10px;
         }
-        .phone-block i { font-size: 1.4rem; }
 
         /* ====== КНОПКА ТЕЛЕГРАМ ====== */
         .tg-btn {
@@ -144,22 +134,21 @@
             color: white;
             text-align: center;
             padding: 16px;
-            margin: 0 20px 16px 20px;
+            margin: 0 24px 16px 24px;
             border-radius: 16px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: clamp(0.95rem, 1.5vw, 1.2rem);
             transition: 0.3s;
             border: 2px solid #0088cc;
         }
         .tg-btn:hover { background: #00aaff; transform: scale(1.01); }
-        .tg-btn i { margin-right: 10px; }
 
         /* ====== ТАБИ ====== */
         .tabs { 
             display: flex; 
-            gap: 6px; 
-            padding: 0 20px 12px 20px; 
+            gap: 8px; 
+            padding: 0 24px 14px 24px; 
             background: white; 
             border-bottom: 2px solid #e9eef3; 
             flex-wrap: wrap;
@@ -167,13 +156,13 @@
         .tab-btn { 
             background: #f1f5f9; 
             border: none; 
-            padding: 10px 16px; 
+            padding: 10px 20px; 
             border-radius: 40px; 
             font-weight: 700; 
             cursor: pointer; 
-            font-size: 0.8rem; 
+            font-size: clamp(0.7rem, 1.2vw, 0.9rem); 
             transition: 0.3s; 
-            flex: 1;
+            flex: 1 1 auto;
             text-align: center;
             min-width: 70px;
         }
@@ -181,22 +170,20 @@
             background: #0a1628; 
             color: white; 
         }
-        .tab-btn i { margin-right: 4px; }
 
         /* ====== КОНТЕНТ ====== */
-        .content { padding: 20px; background: white; }
+        .content { padding: 24px; background: white; }
         .panel { display: none; }
         .panel.active { display: block; }
 
         .section-title { 
-            font-size: 1.3rem; 
+            font-size: clamp(1.1rem, 2.5vw, 1.6rem); 
             font-weight: 800; 
             border-left: 5px solid #f39c12; 
             padding-left: 14px; 
             margin-bottom: 16px; 
             color: #0a1628;
         }
-        .section-title i { color: #f39c12; margin-right: 8px; }
 
         /* ====== КАРУСЕЛЬ ====== */
         .carousel-container {
@@ -213,11 +200,11 @@
         }
         .carousel-slide {
             min-width: 100%;
-            padding: 20px;
+            padding: 24px;
             box-sizing: border-box;
         }
         .carousel-slide h3 {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
             color: #0a1628;
             margin-bottom: 12px;
             display: flex;
@@ -232,7 +219,7 @@
         .carousel-slide ul li {
             padding: 6px 0;
             border-bottom: 1px solid #e9eef3;
-            font-size: 0.95rem;
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
             color: #1e293b;
             display: flex;
             align-items: baseline;
@@ -242,7 +229,6 @@
             color: #f39c12; 
             width: 20px; 
             text-align: center;
-            font-size: 0.9rem;
         }
         .carousel-dots {
             display: flex;
@@ -270,14 +256,16 @@
         .category-header {
             background: #0a1628;
             color: white;
-            padding: 10px 16px;
+            padding: 10px 18px;
             border-radius: 12px;
             margin: 16px 0 8px 0;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: clamp(0.85rem, 1.2vw, 1rem);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 4px;
         }
         .category-header i { color: #f39c12; margin-right: 8px; }
 
@@ -288,20 +276,20 @@
             padding: 7px 0; 
             border-bottom: 1px solid #f1f5f9; 
             gap: 4px;
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 1.1vw, 0.95rem);
             color: #1e293b;
         }
         .row strong { color: #0a1628; }
 
         .category-total {
             background: #f1f5f9;
-            padding: 8px 16px;
+            padding: 8px 18px;
             border-radius: 10px;
             margin: 6px 0 14px 0;
             display: flex;
             justify-content: space-between;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 1.1vw, 0.95rem);
             color: #0a1628;
         }
 
@@ -309,12 +297,12 @@
             background: #0a1628; 
             color: white;
             margin-top: 20px; 
-            padding: 16px 20px; 
+            padding: 16px 24px; 
             border-radius: 16px; 
             display: flex; 
             justify-content: space-between; 
             font-weight: 800; 
-            font-size: 1.1rem; 
+            font-size: clamp(0.95rem, 1.5vw, 1.2rem); 
             flex-wrap: wrap;
             gap: 8px;
         }
@@ -325,7 +313,7 @@
             font-weight: 800; 
             margin-top: 16px; 
             margin-bottom: 8px; 
-            font-size: 0.9rem; 
+            font-size: clamp(0.8rem, 1.1vw, 0.95rem); 
             background: #e9ecef; 
             padding: 6px 16px; 
             border-radius: 28px; 
@@ -337,7 +325,7 @@
             justify-content: space-between; 
             padding: 5px 0; 
             border-bottom: 1px solid #f1f5f9; 
-            font-size: 0.85rem; 
+            font-size: clamp(0.7rem, 1vw, 0.9rem); 
             gap: 8px;
             color: #1e293b;
         }
@@ -347,31 +335,32 @@
         }
         .material-total {
             background: #f1f5f9;
-            padding: 8px 16px;
+            padding: 8px 18px;
             border-radius: 10px;
             margin: 6px 0 14px 0;
             display: flex;
             justify-content: space-between;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 1.1vw, 0.95rem);
             color: #0a1628;
         }
 
         /* ====== ФУТЕР ====== */
         .footer { 
             background: #f8fafc; 
-            padding: 20px; 
+            padding: 20px 24px; 
             text-align: center; 
-            font-size: 0.8rem; 
+            font-size: clamp(0.7rem, 1vw, 0.85rem); 
             border-top: 2px solid #e9eef3; 
             display: flex; 
-            flex-direction: column;
-            gap: 12px;
+            justify-content: space-between; 
             align-items: center; 
+            flex-wrap: wrap;
+            gap: 12px;
         }
         .footer .contact-telegram { 
             background: #0088cc; 
-            padding: 12px 28px; 
+            padding: 10px 28px; 
             border-radius: 60px; 
             text-decoration: none; 
             color: white; 
@@ -380,53 +369,56 @@
             align-items: center; 
             gap: 10px; 
             transition: 0.3s; 
-            font-size: 1rem;
-            width: 100%;
-            justify-content: center;
+            font-size: clamp(0.8rem, 1.1vw, 1rem);
         }
         .footer .contact-telegram:hover { background: #00aaff; }
 
         /* ====== АДАПТИВ ====== */
-        @media (max-width: 400px) {
+        @media (max-width: 480px) {
             body { padding: 6px; }
-            .header { padding: 20px 16px; }
-            .header h1 { font-size: 1.4rem; }
-            .price-tag { font-size: 1rem; padding: 6px 14px; }
-            .badge { font-size: 0.65rem; padding: 4px 10px; }
-            .phone-block { font-size: 1rem; padding: 12px 16px; margin: 0 12px 12px 12px; }
-            .tg-btn { font-size: 0.9rem; padding: 14px; margin: 0 12px 12px 12px; }
+            .header { padding: 18px 16px; }
+            .header-grid { grid-template-columns: 1fr; gap: 8px; }
+            .price-tag { align-self: flex-start; }
+            .phone-block { margin: 0 12px 12px 12px; padding: 12px 16px; flex-direction: column; align-items: stretch; text-align: center; }
+            .phone-block a { justify-content: center; }
+            .tg-btn { margin: 0 12px 12px 12px; padding: 14px; font-size: 0.9rem; }
             .tabs { padding: 0 12px 10px 12px; gap: 4px; }
-            .tab-btn { font-size: 0.65rem; padding: 8px 10px; min-width: 55px; }
+            .tab-btn { padding: 8px 12px; font-size: 0.65rem; min-width: 55px; }
             .content { padding: 14px; }
-            .section-title { font-size: 1.1rem; }
-            .row { font-size: 0.8rem; }
-            .total { font-size: 0.95rem; padding: 12px 16px; }
-            .carousel-slide { padding: 14px; }
-            .carousel-slide h3 { font-size: 1rem; }
-            .carousel-slide ul li { font-size: 0.8rem; }
-            .material-row { font-size: 0.75rem; }
-            .category-header { font-size: 0.8rem; padding: 8px 12px; }
+            .carousel-slide { padding: 16px; }
         }
 
-        @media (min-width: 401px) and (max-width: 480px) {
-            .header h1 { font-size: 1.6rem; }
-            .tab-btn { font-size: 0.7rem; padding: 9px 12px; }
+        @media (min-width: 481px) and (max-width: 768px) {
+            .header { padding: 22px 24px; }
+            .phone-block { margin: 0 16px 12px 16px; }
+            .tg-btn { margin: 0 16px 12px 16px; }
+            .tabs { padding: 0 16px 12px 16px; }
+            .content { padding: 18px; }
         }
 
-        /* Стилі для телефону */
-        .phone-click {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .wrapper { max-width: 100%; margin: 0 20px; }
         }
-        .phone-click i { font-size: 1.4rem; }
+
+        @media (min-width: 1025px) {
+            .wrapper { max-width: 1200px; }
+        }
+
+        .subnote {
+            font-size: clamp(0.7rem, 1vw, 0.85rem);
+            color: #475569;
+            padding: 12px 16px;
+            background: #f1f5f9;
+            border-radius: 12px;
+            margin-top: 12px;
+        }
     </style>
 </head>
 <body>
 <div class="wrapper">
     <!-- ====== ХЕДЕР ====== -->
     <div class="header">
-        <div class="header-top">
+        <div class="header-grid">
             <div>
                 <h1><i class="fas fa-home"></i> Ремонт 51 м²</h1>
                 <div class="subtitle">Київ · панельний будинок · 2025</div>
@@ -444,10 +436,7 @@
     <!-- ====== ТЕЛЕФОН ====== -->
     <div class="phone-block">
         <span><i class="fas fa-phone-alt"></i> Телефон:</span>
-        <a href="tel:+380685742713" class="phone-click">
-            <span>+380685742713</span>
-            <i class="fas fa-arrow-right"></i>
-        </a>
+        <a href="tel:+380685742713"><span>+380685742713</span> <i class="fas fa-arrow-right"></i></a>
     </div>
 
     <!-- ====== КНОПКА ТЕЛЕГРАМ ====== -->
@@ -465,10 +454,9 @@
 
     <!-- ====== КОНТЕНТ ====== -->
     <div class="content">
-        <!-- ====== ДОГОВІР + КАРУСЕЛЬ ====== -->
+        <!-- ====== ДОГОВІР ====== -->
         <div id="dogovir" class="panel active">
             <div class="section-title"><i class="fas fa-gavel"></i> Договір підряду</div>
-            
             <div class="row"><strong>Предмет:</strong><span>Капремонт 2-кімн. 51 м²</span></div>
             <div class="row"><strong>Оплата:</strong><span>поетапно після акта</span></div>
             <div class="row"><strong>Гарантія:</strong><span>12 місяців</span></div>
@@ -480,7 +468,6 @@
             <!-- ====== КАРУСЕЛЬ ====== -->
             <div class="carousel-container">
                 <div class="carousel-track" id="carouselTrack">
-                    <!-- Слайд 1: Загальне -->
                     <div class="carousel-slide">
                         <h3><i class="fas fa-brush"></i> Загальне по квартирі</h3>
                         <ul>
@@ -492,7 +479,6 @@
                             <li><i class="fas fa-palette"></i> Фарбування: стримані тони</li>
                         </ul>
                     </div>
-                    <!-- Слайд 2: Кухня -->
                     <div class="carousel-slide">
                         <h3><i class="fas fa-utensils"></i> Кухня</h3>
                         <ul>
@@ -501,10 +487,8 @@
                             <li><i class="fas fa-layer-group"></i> Підлога — ламінат</li>
                             <li><i class="fas fa-water"></i> Заміна раковини, сифона</li>
                             <li><i class="fas fa-fire"></i> Підключення газової плити, витяжки</li>
-                            <li><i class="fas fa-tools"></i> Збір модульної кухні</li>
                         </ul>
                     </div>
-                    <!-- Слайд 3: Туалет -->
                     <div class="carousel-slide">
                         <h3><i class="fas fa-toilet"></i> Туалет</h3>
                         <ul>
@@ -512,10 +496,8 @@
                             <li><i class="fas fa-tint"></i> Демонтаж старого + монтаж бойлера</li>
                             <li><i class="fas fa-th-large"></i> Підлога — плитка</li>
                             <li><i class="fas fa-paint-roller"></i> Вологостійка фарба</li>
-                            <li><i class="fas fa-shield-alt"></i> Протигрибкова обробка</li>
                         </ul>
                     </div>
-                    <!-- Слайд 4: Ванна -->
                     <div class="carousel-slide">
                         <h3><i class="fas fa-bath"></i> Ванна кімната</h3>
                         <ul>
@@ -524,10 +506,8 @@
                             <li><i class="fas fa-bath"></i> Ванна зашивається з люком</li>
                             <li><i class="fas fa-th"></i> Плитка на підлозі + стіни</li>
                             <li><i class="fas fa-fire"></i> Тепла підлога електрична</li>
-                            <li><i class="fas fa-shower"></i> Подвійна вологозахищена розетка</li>
                         </ul>
                     </div>
-                    <!-- Слайд 5: Коридор + кімнати -->
                     <div class="carousel-slide">
                         <h3><i class="fas fa-door-open"></i> Коридор + кімнати</h3>
                         <ul>
@@ -535,11 +515,9 @@
                             <li><i class="fas fa-broom"></i> Коридор — миюча стійка фарба</li>
                             <li><i class="fas fa-wood"></i> Підлога — ламінат</li>
                             <li><i class="fas fa-couch"></i> Збір меблів за потреби</li>
-                            <li><i class="fas fa-lightbulb"></i> Нові світильники та розетки</li>
                         </ul>
                     </div>
                 </div>
-                <!-- Точки навігації -->
                 <div class="carousel-dots" id="carouselDots">
                     <button class="carousel-dot active" data-index="0"></button>
                     <button class="carousel-dot" data-index="1"></button>
@@ -548,10 +526,7 @@
                     <button class="carousel-dot" data-index="4"></button>
                 </div>
             </div>
-
-            <div class="subnote" style="font-size:0.85rem; color:#475569; padding:12px 16px; background:#f1f5f9; border-radius:12px; margin-top:12px;">
-                <i class="fas fa-info-circle"></i> Стелі — обговорюється окремо. Додаткові роботи — після погодження.
-            </div>
+            <div class="subnote"><i class="fas fa-info-circle"></i> Стелі — обговорюється окремо. Додаткові роботи — після погодження.</div>
         </div>
 
         <!-- ====== КОШТОРИС ====== -->
@@ -610,13 +585,8 @@
             <div class="row"><span>Логістика, бій, добривка, клінінг, інструмент</span><span>56 000</span></div>
             <div class="category-total"><span>РАЗОМ</span><span>56 000 грн</span></div>
 
-            <div class="total">
-                <span><i class="fas fa-file-invoice-dollar"></i> ВСЬОГО:</span>
-                <span><strong>687 500 грн</strong></span>
-            </div>
-            <div class="subnote" style="font-size:0.8rem; color:#475569; padding:12px 16px; background:#f1f5f9; border-radius:12px; margin-top:12px;">
-                * Діапазон 650 000 – 750 000 грн. Оплата поетапно після акта.
-            </div>
+            <div class="total"><span><i class="fas fa-file-invoice-dollar"></i> ВСЬОГО:</span><span><strong>687 500 грн</strong></span></div>
+            <div class="subnote">* Діапазон 650 000 – 750 000 грн. Оплата поетапно після акта.</div>
         </div>
 
         <!-- ====== МАТЕРІАЛИ ====== -->
@@ -737,62 +707,42 @@
         <span><i class="fas fa-file-contract"></i> Кошторис 687 500 ₴ | Матеріали 405 150 ₴</span>
         <span><i class="fas fa-phone"></i> <a href="tel:+380685742713" style="color:#0a1628;font-weight:700;">+380685742713</a></span>
         <a href="https://t.me/evroremontkiev" target="_blank" rel="noopener noreferrer" class="contact-telegram">
-            <i class="fab fa-telegram"></i> Зв'язатися в Telegram
+            <i class="fab fa-telegram"></i> Зв'язатися
         </a>
     </div>
 </div>
 
 <script>
     // ====== ТАБИ ======
-    const btns = document.querySelectorAll('.tab-btn');
-    const panels = document.querySelectorAll('.panel');
-    btns.forEach(btn => {
+    document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            const target = btn.getAttribute('data-tab');
-            panels.forEach(p => p.classList.remove('active'));
-            document.getElementById(target).classList.add('active');
-            btns.forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
             btn.classList.add('active');
+            document.getElementById(btn.dataset.tab).classList.add('active');
         });
     });
 
     // ====== КАРУСЕЛЬ ======
     const track = document.getElementById('carouselTrack');
     const dots = document.querySelectorAll('.carousel-dot');
-    let currentIndex = 0;
-    const totalSlides = dots.length;
+    let current = 0;
+    const total = dots.length;
 
-    function goToSlide(index) {
-        if (index < 0) index = totalSlides - 1;
-        if (index >= totalSlides) index = 0;
-        currentIndex = index;
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentIndex);
-        });
+    function goTo(index) {
+        if (index < 0) index = total - 1;
+        if (index >= total) index = 0;
+        current = index;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
     }
 
-    dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-            goToSlide(parseInt(dot.dataset.index));
-        });
-    });
+    dots.forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.index))));
 
-    // Автоматична зміна кожні 5 секунд
-    let autoSlide = setInterval(() => {
-        goToSlide(currentIndex + 1);
-    }, 5000);
-
-    // Пауза при дотику
+    let auto = setInterval(() => goTo(current + 1), 5000);
     const carousel = document.querySelector('.carousel-container');
-    carousel.addEventListener('touchstart', () => {
-        clearInterval(autoSlide);
-    });
-    carousel.addEventListener('touchend', () => {
-        autoSlide = setInterval(() => {
-            goToSlide(currentIndex + 1);
-        }, 5000);
-    });
+    carousel.addEventListener('touchstart', () => clearInterval(auto));
+    carousel.addEventListener('touchend', () => auto = setInterval(() => goTo(current + 1), 5000));
 </script>
 </body>
 </html>
